@@ -1,0 +1,74 @@
+.kitchen-display {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #111827;
+}
+
+.kitchen-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.orders-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow-y: auto;
+  align-content: start;
+}
+
+.order-details {
+  width: 400px;
+  background: #1e293b;
+  border-left: 2px solid #2563eb;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-bottom: 1px solid #334155;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #475569;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #334155;
+}
+
+/* El CSS restante ya está en App.css */
