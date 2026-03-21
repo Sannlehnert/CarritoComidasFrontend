@@ -17,25 +17,19 @@ class OrderService {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
-      const data = await response.json()
+const data = await response.json()
       console.log('📦 Datos recibidos del backend:', data)
       
-      // Asegurarnos de que siempre trabajamos con un array
-      let orders = []
+      // FIX: Backend devuelve {ordenes: [...]}
+      let orders = data.ordenes || data || []
       
-      if (Array.isArray(data)) {
-        // Si la respuesta es directamente un array
-        orders = data
-      } else if (data.ordenes && Array.isArray(data.ordenes)) {
-        // Si la respuesta tiene propiedad 'ordenes'
-        orders = data.ordenes
-      } else if (data.data && Array.isArray(data.data)) {
-        // Si la respuesta tiene propiedad 'data'
-        orders = data.data
-      } else {
-        console.warn('⚠️ Formato de respuesta inesperado:', data)
+      if (!Array.isArray(orders)) {
+        console.warn('⚠️ Formato inesperado, usando array vacío')
         orders = []
       }
+      
+      console.log('📦 Orders para dispatch:', orders)
+
       
       console.log(`✅ ${orders.length} órdenes cargadas`)
       this.dispatch({ type: 'SET_ORDERS', payload: orders })

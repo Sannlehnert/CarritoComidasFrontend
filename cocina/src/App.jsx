@@ -7,6 +7,10 @@ function App() {
   return (
     <OrderProvider>
       <div className="app kiosk-mode">
+        <header className="app-header">
+          <img src="/images/Logo.png" alt="Smash House" height="35" />
+          <h1 style={{marginLeft: '10px'}}>Smash House - Cocina</h1>
+        </header>
         <KitchenDisplay />
       </div>
     </OrderProvider>
@@ -14,3 +18,4 @@ function App() {
 }
 
 export default App
+

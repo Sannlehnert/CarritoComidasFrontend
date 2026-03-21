@@ -151,13 +151,7 @@ const OrderSummary = () => {
               className="quick-action"
               onClick={() => handleQuickAdd('Papas Extra', 400)}
             >
-              🍟 Papas Extra
-            </button>
-            <button 
-              className="quick-action"
-              onClick={() => handleQuickAdd('Salsa Extra', 200)}
-            >
-              🧂 Salsas Extra
+              <img src="/images/PapasFritas.png" alt="Papas" style={{width: '20px', height: '20px', marginRight: '5px'}} /> Papas Extra
             </button>
           </div>
         </div>

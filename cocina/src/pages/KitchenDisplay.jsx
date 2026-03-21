@@ -16,7 +16,9 @@ const KitchenDisplay = () => {
   const [newOrders, setNewOrders] = useState(new Set());
   const [showNotification, setShowNotification] = useState(false);
 
-  const safeOrders = Array.isArray(orders) ? orders : [];
+const safeOrders = Array.isArray(orders) ? orders : [];
+console.log('🔍 DEBUG Orders:', safeOrders)
+
 
   useEffect(() => {
     const handleNotification = () => {
@@ -116,8 +118,10 @@ const KitchenDisplay = () => {
         </div>
       )}
 
-      <div className="orders-container">
-        <div className="orders-grid">
+
+      <div className="orders-container" style={{height: '100%', overflow: 'hidden'}}>
+        <div className="orders-grid" style={{height: '100%', overflowY: 'auto', WebkitOverflowScrolling: 'touch'}}>
+
           {filteredOrders.map(order => (
             <OrderCard 
               key={order.id || order.temp_id} 
