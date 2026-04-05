@@ -29,7 +29,7 @@ El objetivo es **agilizar el flujo de pedidos**, evitar confusiones y mejorar lo
 - 📡 Socket.IO Client
 - 🌐 Fetch API
 - 💾 IndexedDB (offline básico)
-- 🎨 CSS simple (enfocado en usabilidad)
+- 🎨 Tailwind Css
 
 ---
 
